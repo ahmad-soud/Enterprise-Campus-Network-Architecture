@@ -7,7 +7,7 @@ This project represents a full-scale, enterprise-grade campus network deployment
 
 ### 🏗️ Network Topology & Architecture
 
-![Enterprise Campus Topology](Final_Topology.PNG)
+![Enterprise Campus Topology](Final_Topology.png)
 
 *Figure 1: Complete Enterprise Topology featuring Dual Distribution/Access Switches, Centralized WLC, Lightweight Access Points, Edge Routers, and WAN Infrastructure.*
 
@@ -28,27 +28,28 @@ This project represents a full-scale, enterprise-grade campus network deployment
 * **Centralized WLAN Controller:** Configured `WLC1` to manage Lightweight APs (`LWAP1`, `LWAP2`) using CAPWAP tunnels.
 * **Dynamic Interfaces & SSIDs:** Created dynamic wireless interfaces mapped to internal VLANs, secured via WPA2-Enterprise authentication.
 
-![WLC Configuration](WLAN_config.PNG)
-![LWAP Association](LWAP_associated_with_WLC1.PNG)
+![WLC Configuration](WLAN_config.png)
+![LWAP Association](LWAP_associated_with_WLC1.png)
 
 #### 4. Infrastructure Security & Network Address Translation
 * **Extended Access Control Lists:** Applied inbound boundary ACLs on core layer SVIs to restrict unauthorized traffic between remote campus VLANs.
 * **Device Hardening:** Enforced SSHv2 management, AAA local authentication, and encrypted secrets across all network devices.
 * **PAT / NAT Overload:** Configured Port Address Translation on `R1` to translate internal RFC 1918 private IP ranges for external public reachability.
 
-![ACL Verification](ACL_works.PNG)
-![Ping and SSH Verification](ping_&_SSH_to_R1.PNG)
+![ACL Verification](ACL_works.png)
+![Ping and SSH Verification](ping_&_SSH_to_R1.png)
 
 #### 5. Automated Services
 * **DHCP Pools:** Configured centralized DHCP pools for dynamic host addressing and default gateway configuration across corporate workstations.
 
-![DHCP Lease Verification](DHCP_Succeeded.PNG)
+<img width="490" height="266" alt="DHCP_succeeded" src="https://github.com/user-attachments/assets/b7ec7f60-5681-4b6f-a12c-db263bbfa629" />
+
 
 ---
 
 ### 📊 Lab Verification & Completion Score
 
-![Final Score](Mega_Lab_Final_Score.PNG)
+![Final Score](Mega_Lab_Final_Score.png)
 
 > **Engineering Note on Simulator Behavior:**
 > * **SVI ACL Display Constraint:** Cisco Packet Tracer has a known display behavior where binding an extended ACL to an SVI (`interface vlan 10`) processes packet filtering accurately in runtime, but may omit the `ip access-group` syntax from the `show running-config` output.
